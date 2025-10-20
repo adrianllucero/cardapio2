@@ -1,0 +1,150 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+/* Cards */
+.card {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.5s ease;
+}
+.card.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(196, 196, 196, 0.4);
+}
+/* Botões */
+.filter-btn {
+  background-color: #9e090f; /* Vermelho-400 */
+  color: white;
+}
+.filter-btn:hover {
+  background-color: #6b090c; /* Vermelho-700 */
+}
+.btn-active {
+  background-color: #6b090c; /* Vermelho-700 */
+  color: white;
+}
+/* Barra de pesquisa */
+#searchInput {
+  border: 1px solid #f8f8f8;
+}
+#cart {
+width: 320px; /* um pouco mais largo que 80, mas não exagerado */
+max-width: 90%;
+box-shadow: -4px 0 20px rgba(0,0,0,0.2);
+border-radius: 0 0 0 16px; /* canto arredondado no topo e na base */
+transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+#cart h2 {
+font-size: 1.25rem;
+}
+#closeCart {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    color: #9e090f;
+    transition: transform 0.2s;
+}
+#closeCart:hover {
+    transform: rotate(90deg);
+}
+#cartItems div {
+background-color: #f9f9f9;
+padding: 8px 10px;
+border-radius: 12px;
+display: flex;
+justify-content: space-between;
+align-items: center;
+margin-bottom: 8px;
+box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+transition: all 0.2s;
+}
+#cartItems div:hover {
+    background-color: #ffe6e6;
+}
+#cartItems button {
+    min-width: 28px;
+    min-height: 28px;
+    font-size: 0.9rem;
+    padding: 0;
+}
+#cartTotal {
+font-size: 1.2rem;
+color: #9e090f;
+}
+#checkoutButton {
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    border-radius: 12px;
+}
+#checkoutButton:hover {
+    background-color: #a20a0f;
+    transform: translateY(-2px);
+}
+
+#cartButton.pulse {
+    animation: pulse 0.4s ease;
+}
+@keyframes pulse {
+0% {
+    transform: scale(1);
+}
+50% {
+    transform: scale(1.3);
+}
+100% {
+    transform: scale(1);
+}
+}
+
+.pulse {
+animation: pulse 0.3s ease;
+}
+
+/* ===== SPLASH SCREEN ===== */
+#splash {
+  position: fixed;
+  inset: 0;
+  background-color: #b91c1c; /* vermelho tailwind 700 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  animation: fadeOut 0.6s ease forwards;
+  animation-delay: 1.2s; /* tempo de exibição da tela */
+}
+
+#splash-logo {
+  width: 120px;
+  opacity: 0;
+  transform: scale(0.8);
+  animation: logoPop 0.8s ease forwards;
+}
+
+@keyframes logoPop {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+/* Oculta o conteúdo até o splash sumir */
+.hidden {
+  opacity: 0;
+}
+
