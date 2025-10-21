@@ -77,28 +77,28 @@ const produtos = [
     nome: "Frapuccino Caramelo",
     descricao: "Bebida na base CREME, leite, xarope de caramelo, batido com gelo e leite",
     imagem: "img/cafe3.png",
-    categoria: "Frapuccinos",
+    categoria: "frapuccinos",
     precos: { "300ml": 9, "400ml": 12, "500ml": 15 }
   },
   {
     nome: "Frapuccino Baunilha",
     descricao: "Bebida de versão clássica com baunilha e leite, batido com gelo e leite",
     imagem: "img/cafe3.png",
-    categoria: "Frapuccinos",
+    categoria: "frapuccinos",
     precos: { "300ml": 9, "400ml": 12, "500ml": 15 }
   },
   {
     nome: "Frapuccino Maracujá",
     descricao: "Leite, base de creme, calda de maracujá e gelo batido. Finalizado com chantilly",
     imagem: "img/cafe3.png",
-    categoria: "Frapuccinos",
+    categoria: "frapuccinos",
     precos: { "300ml": 9, "400ml": 12, "500ml": 15 }
   },
   {
     nome: "Frapuccino Avelã",
     descricao: "Feito com Frappuccino Roast (café), leite, essência de avelã",
     imagem: "img/cafe3.png",
-    categoria: "Frapuccinos",
+    categoria: "frapuccinos",
     precos: { "300ml": 9, "400ml": 12, "500ml": 15 }
   },
   // Doces
@@ -106,21 +106,21 @@ const produtos = [
     nome: "Cookie de Baunilha",
     descricao: "Cookie de Baunilha com Gotas de Chocolate",
     imagem: "img/doce1.jpg",
-    categoria: "Doces",
+    categoria: "doces",
     precos: { "Único": 10 }
   },
   {
     nome: "Bolo Red Velvet Fatia",
     descricao: "1 Fatia do Bolo",
     imagem: "img/doce2.png",
-    categoria: "Doces",
+    categoria: "doces",
     precos: { "Único": 17.50 }
   },
   {
     nome: "Ring Donuts Chocolate",
     descricao: "Donuts em formato de Ring sabor Chocolate",
     imagem: "img/doce3.jpg",
-    categoria: "Doces",
+    categoria: "doces",
     precos: { "Único": 11 }
   }
 ];
