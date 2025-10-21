@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" type="image/png" href="img/logo.png">
-  <title>La Pizzaiola</title>
+  <link rel="icon" type="image/png" href="img/logobranca.png">
+  <title>Bean & Co</title>
 
   <!-- Montserrat -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -33,12 +33,12 @@
 <header class="bg-gray-100 py-4">
     <div class="max-w-6xl mx-auto flex items-center justify-start gap-3 pl-6">
       <!-- Logo -->
-      <img src="img/logo.png" alt="La Pizzaiola" class="h-12 md:h-12">
+      <img src="img/logo.png" alt="Bean & Co" class="h-12 md:h-12">
   
       <!-- Nome da empresa e subtítulo -->
       <div class="flex flex-col">
-        <h1 class="text-2xl md:text-3xl font-bold text-red-700">La Pizzaiola</h1>
-        <span class="text-red-900 font-semibold text-sm md:text-lg">Cardápio</span>
+        <h1 class="text-2xl md:text-3xl font-bold text-[#68432c]">Bean & Co</h1>
+        <span class="text-[#68432c] font-semibold text-sm md:text-lg">Cafeteria</span>
       </div>
     </div>
 </header>
@@ -47,10 +47,10 @@
 <!-- Barra de Pesquisa e Botão de Ordenar -->
 <section class="max-w-6xl mx-auto px-4 py-4 flex gap-2">
     <input type="text" id="searchInput" placeholder="Pesquisar"
-      class="flex-1 px-4 py-2 rounded-full shadow border border-red-700 focus:outline-none focus:ring-2 focus:ring-red-700"
+      class="flex-1 px-4 py-2 rounded-full shadow border border-[#68432c] focus:outline-none focus:ring-2 focus:ring-[#68432c]"
       onkeyup="filterByName()">
   
-    <button id="sortButton" class="px-3 py-2 bg-red-800 text-white rounded-full shadow hover:bg-red-700 transition"
+    <button id="sortButton" class="px-3 py-2 bg-[#68432c] text-white rounded-full shadow hover:bg-[#412f23] transition"
       onclick="document.getElementById('sortOptions').classList.toggle('hidden')">
       <!-- Ícone de filtro -->
       <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -71,101 +71,24 @@
   <!-- Filtros de categorias (scroll horizontal) -->
   <section class="max-w-6xl mx-auto px-4 py-4 overflow-x-auto flex gap-3">
     <button class="filter-btn px-4 py-2 rounded-full shadow transition flex-shrink-0" onclick="filterCategory('all', this)">Todos</button>
-    <button class="filter-btn px-4 py-2 rounded-full shadow transition flex-shrink-0" onclick="filterCategory('pizza', this)">Pizzas</button>
-    <button class="filter-btn px-4 py-2 rounded-full shadow transition flex-shrink-0" onclick="filterCategory('bebida', this)">Bebidas</button>
+    <button class="filter-btn px-4 py-2 rounded-full shadow transition flex-shrink-0" onclick="filterCategory('Cafés Quentes', this)">Cafés Quentes</button>
+    <button class="filter-btn px-4 py-2 rounded-full shadow transition flex-shrink-0" onclick="filterCategory('Cafés Gelados', this)">Cafés Gelados</button>
+    <button class="filter-btn px-4 py-2 rounded-full shadow transition flex-shrink-0" onclick="filterCategory('frapuccinos', this)">Frapuccinos</button>
+    <button class="filter-btn px-4 py-2 rounded-full shadow transition flex-shrink-0" onclick="filterCategory('doces', this)">Doces</button>
   </section>
 
   <!-- Cardápio -->
   <section class="max-w-6xl mx-auto px-5 py-8 grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6" id="menu">
-    <!-- Exemplo de cards -->
-    <div class="bg-white rounded-2xl shadow-md overflow-hidden card" data-category="pizza" data-name="Pizza Calabresa" data-price="35">
-        <img src="img/pizza1.jpg" alt="Pizza Calabresa" class="w-full h-48 object-cover">
-        <div class="p-4">
-          <h3 class="text-lg font-semibold">Calabresa</h3>
-          <p class="text-sm text-gray-600">Molho de tomate, Mussarela, Calabresa Fatiada, Cebola</p>
-          <div class="mt-2 flex items-center justify-between">
-            <p class="font-bold text-black">R$ 35,00</p>
-            <button class="bg-red-700 hover:bg-red-800 text-white px-4 py-1 rounded-full text-sm font-semibold" onclick="addToCart(this)">Adicionar</button>
-          </div>
-        </div>
-      </div>
-      
-      <div class="bg-white rounded-2xl shadow-md overflow-hidden card" data-category="pizza" data-name="Pizza Margherita" data-price="38">
-        <img src="img/pizza2.jpg" alt="Pizza Margherita" class="w-full h-48 object-cover">
-        <div class="p-4">
-          <h3 class="text-lg font-semibold">Margherita</h3>
-          <p class="text-sm text-gray-600">Molho de Tomate, Mussarela, Manjericão</p>
-          <div class="mt-2 flex items-center justify-between">
-            <p class="font-bold text-black">R$ 38,00</p>
-            <button class="bg-red-700 hover:bg-red-800 text-white px-4 py-1 rounded-full text-sm font-semibold" onclick="addToCart(this)">Adicionar</button>
-          </div>
-        </div>
-      </div>
-      
-      <div class="bg-white rounded-2xl shadow-md overflow-hidden card" data-category="pizza" data-name="Pizza Frango com Catupiry" data-price="36">
-        <img src="img/pizza3.png" alt="Pizza Frango com Catupiry" class="w-full h-48 object-cover">
-        <div class="p-4">
-          <h3 class="text-lg font-semibold">Frango com Catupiry</h3>
-          <p class="text-sm text-gray-600">Frango Desfiado com Creme de Catupiry</p>
-          <div class="mt-2 flex items-center justify-between">
-            <p class="font-bold text-black">R$ 36,00</p>
-            <button class="bg-red-700 hover:bg-red-800 text-white px-4 py-1 rounded-full text-sm font-semibold" onclick="addToCart(this)">Adicionar</button>
-          </div>
-        </div>
-      </div>
-      
-      <div class="bg-white rounded-2xl shadow-md overflow-hidden card" data-category="pizza" data-name="Pizza Quatro Queijos" data-price="37">
-        <img src="img/pizza4.png" alt="Pizza Quatro Queijos" class="w-full h-48 object-cover">
-        <div class="p-4">
-          <h3 class="text-lg font-semibold">Quatro Queijos</h3>
-          <p class="text-sm text-gray-600">Mussarela, Provolone, Gorgonzola, Parmesão</p>
-          <div class="mt-2 flex items-center justify-between">
-            <p class="font-bold text-black">R$ 37,00</p>
-            <button class="bg-red-700 hover:bg-red-800 text-white px-4 py-1 rounded-full text-sm font-semibold" onclick="addToCart(this)">Adicionar</button>
-          </div>
-        </div>
-      </div>
-      
-      <div class="bg-white rounded-2xl shadow-md overflow-hidden card" data-category="pizza" data-name="Pizza Portuguesa" data-price="37">
-        <img src="img/pizza5.jpg" alt="Pizza Portuguesa" class="w-full h-48 object-cover">
-        <div class="p-4">
-          <h3 class="text-lg font-semibold">Portuguesa</h3>
-          <p class="text-sm text-gray-600">Molho de Tomate, Mussarela, Presunto, Ovo, Cebola, Azeitona, Ervilha</p>
-          <div class="mt-2 flex items-center justify-between">
-            <p class="font-bold text-black">R$ 39,00</p>
-            <button class="bg-red-700 hover:bg-red-800 text-white px-4 py-1 rounded-full text-sm font-semibold" onclick="addToCart(this)">Adicionar</button>
-          </div>
-        </div>
-      </div>
-      
-      <div class="bg-white rounded-2xl shadow-md overflow-hidden card" data-category="pizza" data-name="Pizza Vegetariana" data-price="36">
-        <img src="img/pizza6.png" alt="Pizza Vegetariana" class="w-full h-48 object-cover">
-        <div class="p-4">
-          <h3 class="text-lg font-semibold">Vegetariana</h3>
-          <p class="text-sm text-gray-600">Mussarela, Tomate, Cebola, Pimentão, Milho, Azeitona, Cogumelos</p>
-          <div class="mt-2 flex items-center justify-between">
-            <p class="font-bold text-black">R$ 36,00</p>
-            <button class="bg-red-700 hover:bg-red-800 text-white px-4 py-1 rounded-full text-sm font-semibold" onclick="addToCart(this)">Adicionar</button>
-          </div>
-        </div>
-      </div>
-      
-      <div class="bg-white rounded-2xl shadow-md overflow-hidden card" data-category="bebida" data-name="Coca-Cola" data-price="8">
-        <img src="img/bebida1.jpg" alt="Coca-Cola" class="w-full h-48 object-cover">
-        <div class="p-4">
-          <h3 class="text-lg font-semibold">Coca-Cola Lata</h3>
-          <p class="text-sm text-gray-600">Bebida</p>
-          <div class="mt-2 flex items-center justify-between">
-            <p class="font-bold text-black">R$ 8,00</p>
-            <button class="bg-red-700 hover:bg-red-800 text-white px-4 py-1 rounded-full text-sm font-semibold" onclick="addToCart(this)">Adicionar</button>
-          </div>
-        </div>
-      </div>
+
+  <!-- Primeiro os dados -->
+  <script src="produtos.js"></script>
+  <!-- Depois o script que gera os cards -->
+  <script src="main.js"></script>
 </section>
   
 <!-- Botão do Carrinho -->
 <button id="cartButton" 
-        class="fixed bottom-5 right-5 bg-red-700 text-white p-4 rounded-full shadow-lg hover:bg-red-800 transition z-50">
+        class="fixed bottom-5 right-5 bg-[#412f23] text-white p-4 rounded-full shadow-lg hover:bg-[#412f23] transition z-50">
   <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
           d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13l-1.5 7h13L17 13M7 13h10m-6 6h0"/>
@@ -177,7 +100,7 @@
      class="fixed top-0 right-0 w-80 h-full bg-white shadow-lg transform translate-x-full transition-transform duration-300 flex flex-col z-50">
     <div class="p-4 flex justify-between items-center border-b">
         <h2 class="text-lg font-bold">Seu Pedido</h2>
-        <button id="closeCart" class="text-red-700 font-bold text-2xl">&times;</button>
+        <button id="closeCart" class="text-[#68432c] font-bold text-2xl">&times;</button>
     </div>
     <div id="cartItems" class="p-4 flex-1 overflow-y-auto"></div>
     <div class="p-4 border-t">
@@ -186,7 +109,7 @@
             <span id="cartTotal">R$ 0,00</span>
         </div>
         <a id="checkoutButton" href="#" target="_blank" 
-           class="block bg-red-700 text-white text-center py-2 rounded hover:bg-red-800 transition">
+           class="block bg-[#68432c] text-white text-center py-2 rounded hover:bg-[#412f23] transition">
             Enviar Pedido
         </a>
     </div>
@@ -195,13 +118,13 @@
 <!-- Footer simples -->
 <footer class="bg-white shadow-inner py-6 mt-8">
 <div class="max-w-6xl mx-auto text-center text-gray-600">
-    <p><br>© 2025 La Pizzaiola. Todos os direitos reservados.</p>
+    <p><br>© 2025 Bean & Co. Todos os direitos reservados.</p>
 </div>
 </footer>
 
 <!-- Botão Voltar ao Topo -->
 <button id="backToTop" 
-    class="fixed bottom-5 left-5 bg-red-700 text-white p-3 rounded-full shadow-lg hover:bg-red-800 transition hidden z-50"
+    class="fixed bottom-5 left-5 bg-[#68432c] text-white p-3 rounded-full shadow-lg hover:bg-[#412f23] transition hidden z-50"
     onclick="scrollToTop()">
   <!-- Ícone de seta para cima -->
   <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -211,124 +134,184 @@
 
 <!-- Script -->
 <script>
-    const cards = document.querySelectorAll('.card');
-    const buttons = document.querySelectorAll('.filter-btn');
+  const cards = document.querySelectorAll('.card');
+  const buttons = document.querySelectorAll('.filter-btn');
+  
+  function showCards() {
+      cards.forEach(card => card.classList.add('show'));
+  }
+  window.addEventListener('load', showCards);
 
-    function showCards() {
-        cards.forEach(card => card.classList.add('show'));
-    }
-    window.addEventListener('load', showCards);
+function filterCategory(category, btn) {
+    // Marca botão ativo
+    buttons.forEach(b => b.classList.remove('btn-active'));
+    btn.classList.add('btn-active');
 
-    function filterCategory(category, btn) {
-        buttons.forEach(b => b.classList.remove('btn-active'));
-        btn.classList.add('btn-active');
+    const searchValue = document.getElementById('searchInput').value.toLowerCase();
+    const menu = document.getElementById('menu');
+    const categories = {};
 
-        const searchValue = document.getElementById('searchInput').value.toLowerCase();
-
-        cards.forEach(card => {
-        const matchesCategory = category === 'all' || card.dataset.category === category;
+    // Agrupa cards por categoria
+    cards.forEach(card => {
+        const cardCategories = card.dataset.category.split(',').map(c => c.trim());
         const matchesSearch = card.dataset.name.toLowerCase().includes(searchValue);
-        if(matchesCategory && matchesSearch) {
-            card.style.display = 'block';
-            setTimeout(() => card.classList.add('show'), 10);
-        } else {
-            card.style.display = 'none';
-            card.classList.remove('show');
-        }
+        if (!matchesSearch) return;
+
+        cardCategories.forEach(cat => {
+            if (category !== 'all' && cat !== category) return;
+            if (!categories[cat]) categories[cat] = [];
+            categories[cat].push(card);
         });
-    }
-
-    function filterByName() {
-        const searchValue = document.getElementById('searchInput').value.toLowerCase();
-        const activeCategory = document.querySelector('.btn-active').textContent.toLowerCase();
-        cards.forEach(card => {
-        const matchesCategory = activeCategory === 'todos' || card.dataset.category === activeCategory;
-        const matchesSearch = card.dataset.name.toLowerCase().includes(searchValue);
-        if(matchesCategory && matchesSearch) {
-            card.style.display = 'block';
-            setTimeout(() => card.classList.add('show'), 10);
-        } else {
-            card.style.display = 'none';
-            card.classList.remove('show');
-        }
-        });
-    }
-
-    buttons[0].classList.add('btn-active');
-
-    function sortCards(order) {
-        const menu = document.getElementById('menu');
-        const cardsArray = Array.from(menu.children);
-
-        cardsArray.sort((a, b) => {
-        if(order.includes('name')) {
-            const nameA = a.dataset.name.toLowerCase();
-            const nameB = b.dataset.name.toLowerCase();
-            return order === 'name-asc' ? nameA.localeCompare(nameB) : nameB.localeCompare(nameA);
-        }
-        if(order.includes('price')) {
-            const priceA = parseFloat(a.dataset.price);
-            const priceB = parseFloat(b.dataset.price);
-            return order === 'price-asc' ? priceA - priceB : priceB - priceA;
-        }
-        return 0;
-        });
-
-        cardsArray.forEach(card => menu.appendChild(card));
-
-        // fecha o menu após ordenar
-        document.getElementById('sortOptions').classList.add('hidden');
-    }
-    // Pega o botão
-    const backToTopBtn = document.getElementById('backToTop');
-
-    // Mostra o botão quando o usuário rola para baixo 300px
-    window.onscroll = function() {
-    if (window.scrollY > 300) {
-        backToTopBtn.classList.remove('hidden');
-    } else {
-        backToTopBtn.classList.add('hidden');
-    }
-    };
-
-    // Função para rolar ao topo suavemente
-    function scrollToTop() {
-    window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
     });
-    }
 
-    // Carrinho
-    const cartBtn = document.getElementById('cartButton');
-    const closeBtn = document.getElementById('closeCart');
-    const cartEl = document.getElementById('cart');
-    let cart = [];
+    menu.innerHTML = '';
 
-    // Abre/fecha carrinho
-    cartBtn.addEventListener('click', () => cartEl.classList.toggle('translate-x-full'));
-    closeBtn.addEventListener('click', () => cartEl.classList.add('translate-x-full'));
+    // Ordena categorias: Novidades primeiro
+    const orderedCategories = Object.keys(categories).sort((a, b) => {
+        if (a.toLowerCase() === 'novidades') return -1;
+        if (b.toLowerCase() === 'novidades') return 1;
+        return 0;
+    });
 
-    // Adiciona item
-    function addToCart(button) {
-    // adiciona ao carrinho normalmente
-    const card = button.closest('.card');
-    const name = card.dataset.name;
-    const price = parseFloat(card.dataset.price);
+    // Adiciona título e cards
+    orderedCategories.forEach(cat => {
+        if (categories[cat].length === 0) return;
 
-    const existing = cart.find(item => item.name === name);
-    if(existing) existing.quantity++;
-    else cart.push({ name, price, quantity: 1 });
+        const title = document.createElement('h2');
+        title.textContent = cat.charAt(0).toUpperCase() + cat.slice(1);
+        title.className = 'text-xl font-bold mb-2 col-span-full';
+        menu.appendChild(title);
 
-    updateCartUI();
+        categories[cat].forEach(card => {
+            const clone = (category === 'all') ? card.cloneNode(true) : card;
+            clone.style.display = 'block';
+            menu.appendChild(clone);
+            setTimeout(() => clone.classList.add('show'), 10);
+        });
+    });
+}
 
-    // pulso no botão do carrinho
-    const cartBtn = document.getElementById('cartButton');
+// Função para filtrar por nome
+function filterByName() {
+    const searchValue = document.getElementById('searchInput').value.toLowerCase();
+    const activeCategory = document.querySelector('.btn-active').textContent.toLowerCase();
+    const menu = document.getElementById('menu');
+    const categories = {};
+
+    cards.forEach(card => {
+        const cardCategories = card.dataset.category.split(',').map(c => c.trim());
+        const matchesSearch = card.dataset.name.toLowerCase().includes(searchValue);
+        if (!matchesSearch) return;
+
+        cardCategories.forEach(cat => {
+            if (activeCategory !== 'todos' && cat !== activeCategory) return;
+            if (!categories[cat]) categories[cat] = [];
+            categories[cat].push(card);
+        });
+    });
+
+    menu.innerHTML = '';
+
+    const orderedCategories = Object.keys(categories).sort((a, b) => {
+        if (a.toLowerCase() === 'novidades') return -1;
+        if (b.toLowerCase() === 'novidades') return 1;
+        return 0;
+    });
+
+    orderedCategories.forEach(cat => {
+        if (categories[cat].length === 0) return;
+
+        const title = document.createElement('h2');
+        title.textContent = cat.charAt(0).toUpperCase() + cat.slice(1);
+        title.className = 'text-xl font-bold mb-2 col-span-full';
+        menu.appendChild(title);
+
+        categories[cat].forEach(card => {
+            const clone = (activeCategory === 'todos') ? card.cloneNode(true) : card;
+            clone.style.display = 'block';
+            menu.appendChild(clone);
+            setTimeout(() => clone.classList.add('show'), 10);
+        });
+    });
+}
+
+  buttons[0].classList.add('btn-active');
+
+  function sortCards(order) {
+      const menu = document.getElementById('menu');
+      const cardsArray = Array.from(menu.children);
+
+      cardsArray.sort((a, b) => {
+      if(order.includes('name')) {
+          const nameA = a.dataset.name.toLowerCase();
+          const nameB = b.dataset.name.toLowerCase();
+          return order === 'name-asc' ? nameA.localeCompare(nameB) : nameB.localeCompare(nameA);
+      }
+      if(order.includes('price')) {
+          const priceA = parseFloat(a.dataset.price);
+          const priceB = parseFloat(b.dataset.price);
+          return order === 'price-asc' ? priceA - priceB : priceB - priceA;
+      }
+      return 0;
+      });
+
+      cardsArray.forEach(card => menu.appendChild(card));
+
+      // fecha o menu após ordenar
+      document.getElementById('sortOptions').classList.add('hidden');
+  }
+  // Pega o botão
+  const backToTopBtn = document.getElementById('backToTop');
+
+  // Mostra o botão quando o usuário rola para baixo 300px
+  window.onscroll = function() {
+  if (window.scrollY > 300) {
+      backToTopBtn.classList.remove('hidden');
+  } else {
+      backToTopBtn.classList.add('hidden');
+  }
+  };
+
+  // Função para rolar ao topo suavemente
+  function scrollToTop() {
+  window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+  });
+  }
+
+  // Carrinho
+  const cartBtn = document.getElementById('cartButton');
+  const closeBtn = document.getElementById('closeCart');
+  const cartEl = document.getElementById('cart');
+  let cart = [];
+
+  // Abre/fecha carrinho
+  cartBtn.addEventListener('click', () => cartEl.classList.toggle('translate-x-full'));
+  closeBtn.addEventListener('click', () => cartEl.classList.add('translate-x-full'));
+
+
+function addToCart(button) {
+  const card = button.closest('.card');
+  const name = card.dataset.name;
+
+  // Pega o preço atualizado do elemento <p class="font-bold">
+  const price = parseFloat(card.querySelector('p.font-bold').textContent.replace('R$', '').replace(',', '.').trim()); // extrai o preço atual
+
+  const existing = cart.find(item => item.name === name);
+  if (existing) existing.quantity++;
+  else cart.push({ name, price, quantity: 1 });
+
+  console.log(cart); // para testar
+  updateCartUI();
+
+  const cartBtn = document.getElementById('cartButton');
+  if (cartBtn) {
     cartBtn.classList.add('pulse');
-
-    // remove a classe após a animação para poder repetir
     setTimeout(() => cartBtn.classList.remove('pulse'), 300);
-    }
+  }
+}
+
 
     // Atualiza UI do carrinho
     function updateCartUI() {
@@ -399,7 +382,39 @@
     // remove depois da animação
     setTimeout(() => document.body.removeChild(dot), 700);
     }
-</script>
+    // Inicializa com "Todos" selecionado
+    window.addEventListener('load', () => {
+        filterCategory('all', buttons[0]);
+    });
+document.addEventListener('DOMContentLoaded', () => {
+  document.body.addEventListener('click', (e) => {
+    const btn = e.target.closest('.size-btn');
+    if (!btn) return;
 
-</body>
-</html>
+    const card = btn.closest('.card');
+    if (!card) return;
+
+    const sizeButtons = card.querySelectorAll('.size-btn');
+    const priceTag = card.querySelector('p.font-bold');
+
+    // Remove seleção de todos os botões
+    sizeButtons.forEach(b => {
+      b.classList.remove('selected');
+      b.classList.remove('bg-[#c8a98b]', 'text-white');
+      b.classList.add('bg-[#f4e8dd]', 'text-[#3b2415]');
+    });
+
+    // Seleciona o botão clicado
+    btn.classList.add('selected');
+    btn.classList.add('bg-[#c8a98b]', 'text-white');
+    btn.classList.remove('bg-[#f4e8dd]', 'text-[#3b2415]');
+
+    // Atualiza o preço
+    priceTag.textContent = `R$ ${parseFloat(btn.dataset.price).toFixed(2)}`;
+  });
+});
+
+  </script>
+
+  </body>
+  </html>
